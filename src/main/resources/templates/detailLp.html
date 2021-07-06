@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/frags :: head">
+  <title>Shopr</title>
+</head>
+
+<body>
+<div th:insert="fragments/frags :: nav"></div>
+
+<div class="row">
+  <div class="classcontainer col-md-8 offset-2 " style="margin-top: 80px">
+    <table class="table">
+      <thead class="thread-dark">
+      <tr>
+        <th data-field="id" style="text-align:center">Type</th>
+        <th data-field="id" style="text-align:center">Title</th>
+        <th data-field="id" style="text-align:center">Price</th>
+        <th data-field="id" style="text-align:center">Publisher</th>
+        <th data-field="id" style="text-align:center">Game Genre</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th th:text="${detailLp.getType()}"></th>
+        <td th:text="${detailLp.getTitle()}"></td>
+        <td th:text="${detailLp.getPrice()}"></td>
+        <td th:text="${detailLp.getPerformer()}"></td>
+        <td th:text="${detailLp.getLpGenre()}"></td>
+        <td style="text-align:center">
+
+      </tbody>
+    </table>
+    <a href="editedGame" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">New game</a>
+
+    </span></a>
+  </div>
+</div>
+
+<div th:insert="fragments/frags :: main"></div>
+
+</body>
+</html>

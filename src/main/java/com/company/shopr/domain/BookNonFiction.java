@@ -1,6 +1,6 @@
 package com.company.shopr.domain;
 
-import com.company.shopr.enums.GameGenre;
+import com.company.shopr.enums.BookSubject;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,18 +11,16 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@DiscriminatorValue("NON_FICTION")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @EqualsAndHashCode(callSuper = true)
-@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-public class Game extends Article {
-
-    @Column(columnDefinition = "varchar(255) default 'GAME'")
-    private String type;
-
-    private String publisher;
-    private String minAge;
+public class BookNonFiction extends Book{
 
     @Enumerated(EnumType.STRING)
-    private GameGenre gameGenre;
-}
+    @Column
+    private BookSubject bookSubject;
 
+    @Column(length = 255)
+    private String description;
+}

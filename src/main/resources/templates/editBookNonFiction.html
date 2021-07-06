@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/frags :: head">
+    <title>Shopr</title>
+</head>
+
+<body>
+<div th:insert="fragments/frags :: nav"></div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form method="post"  th:action="@{/editBookNonFiction/{id} (id=${editThisBookNonFiction.id})}" style="margin-top: 20px">
+    <div>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="title" class="form-label">Title</label>
+                <input id="title" class="form-control" th:placeholder="${editThisBookNonFiction.getTitle()}" name="title" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="author" class="form-label">Author</label>
+                <input id="author" class="form-control" th:placeholder="${editThisBookNonFiction.getAuthor()}" name="author" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="price" class="form-label">Price</label>
+                <input id="price" class="form-control" th:placeholder="${editThisBookNonFiction.getPrice()}" name="price" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="supplierId" class="form-label">Supplier ID</label>
+                <input id="supplierId" class="form-control" th:placeholder="${editThisBookNonFiction.getSupplierId()}" name="supplierId" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="isbn" class="form-label">ISBN</label>
+                <input id="isbn" class="form-control" th:placeholder="${editThisBookNonFiction.getIsbn()}" name="isbn" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="pages" class="form-label">Pages</label>
+                <input id="pages" class="form-control" th:placeholder="${editThisBookNonFiction.getPages()}" name="pages" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="description" class="form-label">Description</label>
+                <input id="description" class="form-control" th:placeholder="${editThisBookNonFiction.getDescription()}" name="description" required>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <button id="submitbnt" type="submit" class="form-control btn btn-primary" style="background-color: black" >Edit book</button>
+        </div>
+    </div>
+</form>
+
+
+<div th:insert="fragments/frags :: footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/frags :: head">
+  <title>Shopr</title>
+</head>
+
+<body>
+<div th:insert="fragments/frags :: nav"></div>
+<br>
+<br>
+<br>
+
+
+<h2>Search for students</h2>
+<form th:object="${allBooks}" th:action="@{/book}" method="get">
+  <input type="text" name="search" id="search" th:value="${search}"/>
+  <input type="submit" value="Search"/>
+  <div th:if="${not #lists.isEmpty(search)}">
+    <h2>Book list</h2>
+    <table class="table table-striped">
+      <tr>
+        <th>Type</th>
+        <th>Title</th>
+        <th>Author</th>
+      </tr>
+      <tr th:each="book : ${allBooks}">
+        <td th:text="${book.type}">Type</td>
+        <td th:text="${book.title}">Title</td>
+        <td th:text="${book.author}">Author</td>
+      </tr>
+    </table>
+  </div>
+</form>
+
+<div th:insert="fragments/frags :: footer"></div>
+
+</body>
+</html>

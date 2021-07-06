@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/frags :: head">
+    <title>Shopr</title>
+</head>
+
+<body>
+<div th:insert="fragments/frags :: nav"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form method="post"  th:action="@{/editLp/{id} (id=${editAnLp.id})}" style="margin-top: 20px">
+    <div>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="title" class="form-label">Title</label>
+                <input id="title" class="form-control" th:placeholder="${editAnLp.getTitle()}" name="title" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="performer" class="form-label">Performer</label>
+                <input id="performer" class="form-control" th:placeholder="${editAnLp.getPerformer()}" name="performer" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="lpGenre" class="form-label">Genre (CLASSIC | POP | ROCK | DANCE | R_B | HIPHOP)</label>
+                <input id="lpGenre" class="form-control" th:placeholder="${editAnLp.getLpGenre()}" name="lpGenre" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="price" class="form-label">Price</label>
+                <input id="price" class="form-control" th:placeholder="${editAnLp.getPrice()}" name="price" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="supplierId" class="form-label">Supplier ID</label>
+                <input id="supplierId" class="form-control" th:placeholder="${editAnLp.getSupplierId()}" name="supplierId" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="producer" class="form-label">Producer</label>
+                <input id="producer" class="form-control" th:placeholder="${editAnLp.getProducer()}" name="producer" required>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <button id="submitbnt" type="submit" class="form-control btn btn-primary" style="background-color: black" >Edit record</button>
+        </div>
+    </div>
+</form>
+
+
+
+<div th:insert="fragments/frags ::footer"></div>
+
+</body>
+</html>

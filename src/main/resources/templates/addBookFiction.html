@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/frags :: head">
+    <title>Shopr</title>
+</head>
+
+<body>
+<div th:insert="fragments/frags :: nav"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form method="post"  th:action="@{/addedBookFiction}" th:object="${newBookFiction}" style="margin-top: 20px">
+    <div>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="bookGenre">Bookgenre</label>
+                <select class="form-control" id="bookGenre" th:field="*{bookGenre}">
+                    <option th:each="bookGenre : ${T(com.company.shopr.enums.BookGenre).values()}"
+                            th:value="${bookGenre}" th:text="${bookGenre}"></option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="title" class="form-label">Title</label>
+                <input id="title" class="form-control" placeholder="Title" name="title" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="price" class="form-label">Price</label>
+                <input id="price" class="form-control" placeholder="Price" name="price" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="author" class="form-label">Author</label>
+                <input id="author" class="form-control" placeholder="Author" name="author" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="isbn" class="form-label">Isbn</label>
+                <input id="isbn" class="form-control" placeholder="Isbn" name="isbn" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="pages" class="form-label">Pages</label>
+                <input id="pages" class="form-control" placeholder="Pages" name="pages" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="supplierId" class="form-label">Supplier ID</label>
+                <input id="supplierId" class="form-control" placeholder="supplierId" name="supplierId" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 form-row offset-md-3">
+                <label for="description" class="form-label">Description</label>
+                <input id="description" class="form-control" placeholder="description" name="description" required>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <button id="submitbnt" type="submit" class="form-control btn btn-primary" style="background-color: black" >Add book</button>
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+<br>
+<br>
+
+<div th:insert="fragments/frags :: footer"></div>
